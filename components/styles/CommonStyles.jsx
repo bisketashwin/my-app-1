@@ -7,7 +7,15 @@ const containersStyles = StyleSheet.create({
         justifyContent: 'center',
         padding: 30,
         backgroundColor: '#a9cac8',
-    }
+    },
+    pop1: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 30,
+        backgroundColor: '#a9cac8',
+        margine:100,
+    },
 })
 
 const buttonStyles = StyleSheet.create({

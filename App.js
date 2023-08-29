@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LogIn from './components/LogIn';
 import TabsLayout from './components/Tabs/TabsLayout';
 import AddFlowStack from './components/AddFlow/AddFlowStack';
+import MyModal from './components/MyModal';
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Stack.Screen name="LogIn" component={LogIn} />
         <Stack.Screen name="TabsLayout" component={TabsLayout} options={{headerShown:false}}/>
         <Stack.Screen name="AddFlowStack" component={AddFlowStack} options={{headerShown:false}} />
+        <Stack.Screen name="MyModal" component={MyModal} options={{presentation:'card'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
