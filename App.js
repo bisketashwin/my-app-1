@@ -18,8 +18,8 @@ function MyDrawer() {
   return (
     <Drawer.Navigator options={{headerShown:false}}>
       {/* Bellow line of code would hide the redundant tabs menu item and also hode the tabs title bar which are shown by line wihtout this comment */}
-      {/*<Drawer.Screen name="Feed" component={TabsLayout}  options={{drawerItemStyle: { display: 'none' },headerShown:false }}/> */}
-      <Drawer.Screen name="Feed" component={TabsLayout} />
+      <Drawer.Screen name="Feed" component={TabsLayout}  options={{drawerItemStyle: { display: 'none' },headerShown:false }}/>
+      {/* <Drawer.Screen name="Feed" component={TabsLayout} /> */}
       <Drawer.Screen name="Log Out" component={LogIn} />
     </Drawer.Navigator>
   );
