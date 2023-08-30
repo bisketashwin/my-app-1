@@ -24,7 +24,7 @@ const handleLogOut = ()=>{
   const drawerNavigation = navigation.getParent('LeftDrawer').getParent('mainStack');
   drawerNavigation?.goBack();
   return(
-    <></>
+    <><Text>is this showing up</Text></>
   )
 
 }
@@ -36,6 +36,7 @@ function MyDrawer() {
       <Drawer.Screen name="Feed" component={TabsLayout}  options={{drawerItemStyle: { display: 'none' },headerShown:false }}/>
       {/* <Drawer.Screen name="Feed" component={TabsLayout} /> */}
       <Drawer.Screen name="Log Out" component={handleLogOut} />
+      <Drawer.Screen name="Add Items" component={AddWH1} />
     </Drawer.Navigator>
   );
 }
