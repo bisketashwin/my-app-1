@@ -73,7 +73,12 @@ function MyDrawer() {
     >
       {/* Bellow line of code would hide the redundant tabs menu item and also hode the tabs title bar which are shown by line wihtout this comment */}
       {/* <Drawer.Screen name="TabsLayout" component={TabsLayout} options={{ drawerItemStyle: { display: 'none' }, headerShown: false }} /> */}
-      <Drawer.Screen name="My Tabs" component={TabsLayout} />
+      <Drawer.Screen name="My Tabs" component={TabsLayout} 
+      options={{
+        title:'Tabs parent header (will hide this)',
+        headerLeft: (props) => (<></>)
+          
+        }}/>
       <Drawer.Screen name="Log Out" component={handleLogOut} />
       <Drawer.Screen name="Add Items" component={handleAdd} options={{ headerStyle: { backgroundColor: '#85faee', } }} />
     </Drawer.Navigator>
@@ -100,8 +105,8 @@ function App() {
           <Stack.Screen name="LogIn" component={LogIn}
             options={{ headerStyle: { backgroundColor: '#f9997c', } }}
           />
-          <Stack.Screen name="TabsDraw" component={MyDrawer} options={{ headerShown: true }}
-            options={{ headerStyle: { backgroundColor: '#f9997c', } }} />
+          <Stack.Screen name="TabsDraw" component={MyDrawer} options={{title:'Drawer header (will hide this)', headerShown: true ,headerStyle: { backgroundColor: '#f9997c', }}}
+            />
         </Stack.Group>
         <Stack.Group>
 
