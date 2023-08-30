@@ -36,7 +36,9 @@ const handleAdd = () => {
   const drawerNavigation = navigation.getParent('LeftDrawer').getParent('mainStack');
   drawerNavigation?.navigate(AddWH1);
   return (
-    <><Text>This should not show up -- This is drawer!</Text><Text>It should go to tabs</Text><Text>It is poosible when i can change stack navigation history</Text></>
+    <><Text>This should not show up -- This is drawer!</Text>
+    <Text>It should go to tabs</Text>
+    <Text>It is poosible when i can change stack navigation history</Text></>
   )
 
 }
@@ -51,7 +53,8 @@ const handleAddBack = () => {
     <Button
              //onPress={() => navigation.navigate(Tab1)}
             //onPress={() => navigation.navigate('LogIn')}
-            onPress={() => navigation.navigate('TabsLayout')}
+            //onPress={() => navigation.navigate('TabsLayout')}
+            onPress={() => navigation.pop(1)}
             title="back"
             color="red"
           />
@@ -61,10 +64,15 @@ const handleAddBack = () => {
 
 function MyDrawer() {
   return (
-    <Drawer.Navigator id='LeftDrawer' options={{ headerShown: false }}>
+    <Drawer.Navigator id='LeftDrawer' 
+    options={{ 
+      headerShown: false,
+    // backBehaviour:history ,
+    }}
+    >
       {/* Bellow line of code would hide the redundant tabs menu item and also hode the tabs title bar which are shown by line wihtout this comment */}
       {/* <Drawer.Screen name="TabsLayout" component={TabsLayout} options={{ drawerItemStyle: { display: 'none' }, headerShown: false }} /> */}
-      <Drawer.Screen name="TabsLayout" component={TabsLayout} />
+      <Drawer.Screen name="TabsDraw" component={TabsLayout} />
       <Drawer.Screen name="Log Out" component={handleLogOut} />
       <Drawer.Screen name="Add Items" component={handleAdd} />
     </Drawer.Navigator>
@@ -75,10 +83,23 @@ function MyDrawer() {
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator id='mainStack'>
-        <Stack.Group>
-          <Stack.Screen name="LogIn" component={LogIn} />
-          <Stack.Screen name="TabsLayout" component={MyDrawer} options={{ headerShown: false }} />
+      <Stack.Navigator id='mainStack'
+      options={{
+        title: 'My home',
+        headerStyle: {
+          backgroundColor: '#f4511e',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },}}
+      >
+        <Stack.Group  >
+          <Stack.Screen name="LogIn" component={LogIn} 
+          options={{headerStyle: { backgroundColor: '#f9997c',}}}
+          />
+          <Stack.Screen name="TabsDraw" component={MyDrawer} options={{ headerShown: true }} 
+          options={{headerStyle: { backgroundColor: '#f9997c',}}}/>
         </Stack.Group>
         <Stack.Group>
 
@@ -86,12 +107,15 @@ function App() {
         <Stack.Group options={{ headerShown: false }}>
           <Stack.Screen name="AddWH1" component={AddWH1}
             options={{
+              headerStyle: { backgroundColor: '#f9997c'},
               headerLeft: handleAddBack,
             }} />
-          <Stack.Screen name="AddWH2" component={AddWH2} />
+          <Stack.Screen name="AddWH2" component={AddWH2} 
+          options={{headerStyle: { backgroundColor: '#f9997c',}}}/>
         </Stack.Group>
         <Stack.Group options={{ presentation: 'card' }}>
-          <Stack.Screen name="MyModal" component={MyModal} />
+          <Stack.Screen name="MyModal" component={MyModal} 
+          options={{headerStyle: { backgroundColor: '#f9997c',}}}/>
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

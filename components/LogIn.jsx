@@ -1,21 +1,24 @@
 import { Button, StyleSheet, Text, View ,Clickable} from 'react-native'
 import React from 'react'
 import { Link, useNavigation } from '@react-navigation/native'
+import { containersStyles } from './styles/CommonStyles'
 
 const LogIn = () => {
 const navigation = useNavigation()
 
     const HandleLogIn = ()=>{
-      navigation.navigate('TabsLayout')
+      navigation.navigate('TabsDraw')
     }
     const HandleModal = ()=>{
       navigation.navigate('MyModal')
     }
   return (
-    <View>
-      <Text>LogIn</Text>
+    <View style={containersStyles.con1}>
+      <Text style={containersStyles.m1}>LogIn</Text>
+      <Text> </Text>
       <Button title='Log In' onPress={HandleLogIn}/>
-      <Button title='Launch My Modal' onPress={HandleModal}/>
+      <Text> </Text>
+      <Button title='Launch My Modal' onPress={HandleModal} color='#76a0ac'/>
     </View>
   )
 }

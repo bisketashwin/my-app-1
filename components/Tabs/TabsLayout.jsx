@@ -9,9 +9,10 @@ const Tab = createBottomTabNavigator();
 const TabsLayout = () => {
   const navigation = useNavigation();
   return (
-    <Tab.Navigator>
+    <Tab.Navigator options ={{headerStyle: { backgroundColor: '#f4511e',}}}>
       <Tab.Screen name="Tab1" component={Tab1} 
       options = {{
+        headerStyle: { backgroundColor: '#c8f58a',},
         headerLeft: (props) => (
           <Button
             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
@@ -20,7 +21,8 @@ const TabsLayout = () => {
           />
         ),
       }}/>
-      <Tab.Screen name="Tab2" component={Tab2} />
+      <Tab.Screen name="Tab2" component={Tab2} 
+      options = {{headerStyle: { backgroundColor: '#c8f58a',},}}/>
     </Tab.Navigator>
   )
 }

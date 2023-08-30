@@ -35,5 +35,14 @@ const buttonStyles = StyleSheet.create({
     }
 })
 
+const TesxtStyles = StyleSheet.create({
+    M1: {
+        fontSize:32,
+    },
+    M2: {
+        fontSize:22,
+    }
+})
+
 
 export { containersStyles,buttonStyles }

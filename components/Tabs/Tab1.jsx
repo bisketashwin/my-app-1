@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-
+import { containersStyles } from '../styles/CommonStyles'
 const Tab1 = () => {
   return (
-    <View>
-      <Text>Tab1</Text>
+    <View style={containersStyles.con1}>
+      <Text style={containersStyles.m1}>Tab1</Text>
     </View>
   )
 }
