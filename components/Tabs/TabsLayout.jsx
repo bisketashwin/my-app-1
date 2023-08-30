@@ -9,7 +9,7 @@ const Tab = createBottomTabNavigator();
 const TabsLayout = () => {
   const navigation = useNavigation();
   return (
-    <Tab.Navigator options ={{headerStyle: { backgroundColor: '#f4511e',}}}>
+    <Tab.Navigator name='Tabs Parent' options ={{headerStyle: { backgroundColor: '#f4511e',}}}>
       <Tab.Screen name="Tab1" component={Tab1} 
       options = {{
         headerStyle: { backgroundColor: '#c8f58a',},
