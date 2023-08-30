@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 
-const containersStyles = StyleSheet.create({
+const containers = StyleSheet.create({
     con1: {
         flex: 1,
         alignItems: 'center',
@@ -8,17 +8,16 @@ const containersStyles = StyleSheet.create({
         padding: 30,
         backgroundColor: '#a9cac8',
     },
-    pop1: {
+  con2: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         padding: 30,
-        backgroundColor: '#a9cac8',
-        margine:100,
+        backgroundColor: '#cedd69',
     },
 })
 
-const buttonStyles = StyleSheet.create({
+const buttons = StyleSheet.create({
     button1: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -35,7 +34,7 @@ const buttonStyles = StyleSheet.create({
     }
 })
 
-const TesxtStyles = StyleSheet.create({
+const Texts = StyleSheet.create({
     M1: {
         fontSize:32,
     },
@@ -45,4 +44,4 @@ const TesxtStyles = StyleSheet.create({
 })
 
 
-export { containersStyles,buttonStyles }
+export { containers,buttons,Texts }
