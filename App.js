@@ -28,6 +28,17 @@ const handleLogOut = ()=>{
   )
 
 }
+const handleAdd = ()=>{
+  const navigation = useNavigation();
+  console.log(navigation)
+  // It is important to add id="LeftDrawer" and id="mainStack" for the get parent to work error free
+  const drawerNavigation = navigation.getParent('LeftDrawer').getParent('mainStack');
+  drawerNavigation?.navigate('AddWH1');
+  return(
+    <><Text>This should not show up -- This is drawer!</Text><Text>It should go to tabs</Text><Text>It is poosible when i can change stack navigation history</Text></>
+  )
+
+}
 
 function MyDrawer() {
   return (
@@ -36,7 +47,7 @@ function MyDrawer() {
       <Drawer.Screen name="Feed" component={TabsLayout}  options={{drawerItemStyle: { display: 'none' },headerShown:false }}/>
       {/* <Drawer.Screen name="Feed" component={TabsLayout} /> */}
       <Drawer.Screen name="Log Out" component={handleLogOut} />
-      <Drawer.Screen name="Add Items" component={AddWH1} />
+      <Drawer.Screen name="Add Items" component={handleAdd} />
     </Drawer.Navigator>
   );
 }
