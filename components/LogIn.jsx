@@ -3,13 +3,13 @@ import React from 'react'
 import { Link, useNavigation } from '@react-navigation/native'
 
 const LogIn = () => {
-const Navigator = useNavigation()
+const navigation = useNavigation()
 
     const HandleLogIn = ()=>{
-      Navigator.navigate('TabsLayout')
+      navigation.navigate('TabsLayout')
     }
     const HandleModal = ()=>{
-      Navigator.navigate('MyModal')
+      navigation.navigate('MyModal')
     }
   return (
     <View>
