@@ -9,21 +9,15 @@ const Tab2 = () => {
   const Navigator = useNavigation()
 
   const HandleLogIn = () => {
-    Navigator.navigate('AddFlowStack')
+    Navigator.navigate('AddWH1')
   }
-  const HandleShowMenu = () => {
-    Navigator.navigate('AddFlowStack')
-  }
+
   return (
     <View style={containersStyles.con1}>
       <Text>Tab2</Text>
       <TouchableOpacity title='Add Items' onPress={HandleLogIn} style={buttonStyles.button1}>
 
         <Text style={buttonStyles.button1Text}>Add Items</Text>
-      </TouchableOpacity>
-      <TouchableOpacity title='Show Menu' onPress={HandleShowMenu} style={buttonStyles.button1}>
-
-        <Text style={buttonStyles.button1Text}>Show Menu</Text>
       </TouchableOpacity>
     </View>
   )
