@@ -62,6 +62,14 @@ const TabsLayout = () => {
     )
 }
 
+const HandleLogOut = ({navigation})=>{
+
+    navigation.getParent().goBack()
+    return(
+        <></>
+    )
+}
+
 function MyDrawer() {
     const navigation = useNavigation();
     return (
@@ -86,7 +94,8 @@ function MyDrawer() {
                         />)
                 }} />
 
-            <Drawer.Screen name="Log Out" component={()=>navigation.getParent().goBack()}/>
+<Drawer.Screen name="Log Out" component={({navigation})=>navigation.getParent().goBack()}/>
+            {/* <Drawer.Screen name="Log Out" component={HandleLogOut}/> */}
             {/* <Drawer.Screen name="Feed" component={({navigation}) => navigation.getParent().navigate('Feed')} /> */}
             {/* <Drawer.Screen name="Feed" component={Feed} /> */}
         </Drawer.Navigator>
@@ -97,7 +106,7 @@ function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Log In" component={LogIn} />
+                <Stack.Screen name="Log In" component={LogIn} options={{ headerShown: false }}/>
                 <Stack.Screen name="MyDrawer" component={MyDrawer} options={{ headerShown: false }} />
                 <Stack.Screen name="Feed" component={Feed} />
             </Stack.Navigator>
