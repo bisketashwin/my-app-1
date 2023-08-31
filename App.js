@@ -57,19 +57,12 @@ const Tab = createBottomTabNavigator();
 const TabsLayout = () => {
     return (
         <Tab.Navigator name='Tabs Parent'>
-            <Tab.Screen name="Screen2" component={Home} options={{ headerShown: false }} />
-            <Tab.Screen name="Screen3" component={EmptyScreen} options={{ headerShown: false }} />
+            <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
+            <Tab.Screen name="Profile" component={EmptyScreen} options={{ headerShown: false }} />
         </Tab.Navigator>
     )
 }
 
-const HandleLogOut = ({ navigation }) => {
-
-    navigation.getParent().goBack()
-    return (
-        <></>
-    )
-}
 
 function MyDrawer() {
     const navigation = useNavigation();
@@ -94,7 +87,6 @@ function MyDrawer() {
                 }} />
 
             <Drawer.Screen name="Log Out" component={({ navigation }) => navigation.getParent().goBack()} />
-            {/* <Drawer.Screen name="Log Out" component={HandleLogOut}/> */}
             {/* <Drawer.Screen name="Feed" component={({navigation}) => navigation.getParent().navigate('Feed')} /> */}
             {/* <Drawer.Screen name="Feed" component={Feed} /> */}
         </Drawer.Navigator>
