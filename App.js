@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, Text, TouchableHighlight } from 'react-native';
+import { Button, View, Text, TouchableOpacity } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -9,6 +9,8 @@ import { Icon } from '@rneui/base';
 import { LogBox } from 'react-native';
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreAllLogs();//Ignore all log notifications
+
+import { containers, buttons, IconButtons, Texts } from './components/Styles';
 
 import AddWithdraw from './components/TabScreens/AddWithdraw';
 import Receitps from './components/TabScreens/Receitps';
@@ -36,21 +38,6 @@ function Feed({ navigation, route }) {
     );
 }
 
-function Home({ navigation }) {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home Screen</Text>
-            <Text> </Text>
-            <Button title="Go to Feed" onPress={() => navigation.navigate('Feed')} />
-            <Text> </Text>
-            <Button
-                title="Go to Profile"
-                onPress={() => navigation.navigate('MyDrawer', { screen: 'Profile' })}
-            />
-        </View>
-    );
-}
-
 function LogIn({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -67,21 +54,31 @@ const Tab = createBottomTabNavigator();
 const TabsLayout = () => {
     return (
         <Tab.Navigator name='Tabs Parent'>
-            <Tab.Screen name="Tab1" component={AddWithdraw} 
-            options={{ title:'Add Withdraw', headerShown: false, 
-            tabBarIcon:({ color, size }) => ( <Icon name="shipping-fast" type='font-awesome-5' color={color} size={size}/> )}} />
-            <Tab.Screen name="Tab2" component={Receitps} 
-            options={{ title:'Receipts', headerShown: false, 
-            tabBarIcon:({ color, size }) => ( <Icon name="archive" type='entypo' color={color} size={size}/> )}} />
-            <Tab.Screen name="Tab3" component={Trading} 
-            options={{ title:'Trading', headerShown: false, 
-            tabBarIcon:({ color, size }) => ( <Icon name="clipboard-list" type='font-awesome-5' color={color} size={size}/> )}} />
-            <Tab.Screen name="Tab4" component={Lending} 
-            options={{ title:'Lending', headerShown: false,
-            tabBarIcon:({ color, size }) => ( <Icon name="hand-coin" type='material-community' color={color} size={size}/> )}} />
-            <Tab.Screen name="Tab5" component={PNL} 
-            options={{ title:'PNL', headerShown: false,
-            tabBarIcon:({ color, size }) => ( <Icon name="chart-line" type='font-awesome-5' color={color} size={size}/> )}} />
+            <Tab.Screen name="Tab1" component={AddWithdraw}
+                options={{
+                    title: 'Add Withdraw', headerShown: false,
+                    tabBarIcon: ({ color, size }) => (<Icon name="shipping-fast" type='font-awesome-5' color={color} size={size} />)
+                }} />
+            <Tab.Screen name="Tab2" component={Receitps}
+                options={{
+                    title: 'Receipts', headerShown: false,
+                    tabBarIcon: ({ color, size }) => (<Icon name="archive" type='entypo' color={color} size={size} />)
+                }} />
+            <Tab.Screen name="Tab3" component={Trading}
+                options={{
+                    title: 'Trading', headerShown: false,
+                    tabBarIcon: ({ color, size }) => (<Icon name="clipboard-list" type='font-awesome-5' color={color} size={size} />)
+                }} />
+            <Tab.Screen name="Tab4" component={Lending}
+                options={{
+                    title: 'Lending', headerShown: false,
+                    tabBarIcon: ({ color, size }) => (<Icon name="hand-coin" type='material-community' color={color} size={size} />)
+                }} />
+            <Tab.Screen name="Tab5" component={PNL}
+                options={{
+                    title: 'PNL', headerShown: false,
+                    tabBarIcon: ({ color, size }) => (<Icon name="chart-line" type='font-awesome-5' color={color} size={size} />)
+                }} />
         </Tab.Navigator>
     )
 }
@@ -91,27 +88,25 @@ function MyDrawer() {
     const navigation = useNavigation();
     return (
         <Drawer.Navigator options={{ headerShown: false }}>
-            <Drawer.Screen name="Home" component={TabsLayout} />
+            <Drawer.Screen name="Home" component={TabsLayout} options={{headerShown: true,headerTransparent: true,}}/>
             <Drawer.Screen name="Profile" component={EmptyScreen}
                 options={{
                     headerLeft: () => (
-                        // <TouchableHighlight  onPress={() => navigation.navigate('MyDrawer', { screen: 'Home' })}>
-                        //     {/* <Icon name='swipe_right_alt' type='material-icons' color='#517fa4' /> */}
-                        //     {/* <Icon name='arrow-back' type='materialicons' color='#517fa4' /> */}
-                            
-                        // </TouchableHighlight>
-                        <Icon name='arrow-back' type='Ionicons' color='#00'  onPress={() => navigation.navigate('MyDrawer', { screen: 'Home' })} />
-                    )
+                        <TouchableOpacity style={IconButtons.S1}
+                            onPress={() => navigation.navigate('MyDrawer', { screen: 'Home' })}>
+                            <Icon name='arrow-back' type='Ionicons' color='#00' />
+                        </TouchableOpacity>)
                 }} />
             <Drawer.Screen name="Settings" component={EmptyScreen}
                 options={{
                     headerLeft: () => (
-                        <Icon name='arrow-back' type='Ionicons' color='#00'  onPress={() => navigation.navigate('MyDrawer', { screen: 'Home' })} />)
+                        <TouchableOpacity style={IconButtons.S1}
+                            onPress={() => navigation.navigate('MyDrawer', { screen: 'Home' })}>
+                            <Icon name='arrow-back' type='Ionicons' color='#00' />
+                        </TouchableOpacity>)
                 }} />
 
             <Drawer.Screen name="Log Out" component={({ navigation }) => navigation.getParent().goBack()} />
-            {/* <Drawer.Screen name="Feed" component={({navigation}) => navigation.getParent().navigate('Feed')} /> */}
-            {/* <Drawer.Screen name="Feed" component={Feed} /> */}
         </Drawer.Navigator>
     );
 }

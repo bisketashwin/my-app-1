@@ -1,10 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { containers,Texts } from '../Styles'
+import React, { useEffect } from 'react'
+import { containers, Texts } from '../Styles'
 
-const AddWithdraw = () => {
+const AddWithdraw = ({ navigation }) => {
+  // control parent headder title
+  useEffect(() => {
+    navigation.getParent().setOptions({ headerTitle: 'Add Withdraw Commodity' })
+  }, [])
   return (
-    <View style={containers({backgroundColor:'#97ce4f'}).con1}>
+    <View style={containers({ backgroundColor: '#97ce4f' }).con1}>
       <Text style={Texts.M1}>AddWithdraw</Text>
     </View>
   )
