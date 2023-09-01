@@ -5,7 +5,7 @@ import { containers, Texts } from '../Styles'
 const Trading = ({ navigation }) => {
   // control parent headder title
   useEffect(() => {
-    navigation.getParent().setOptions({ headerTitle: 'Commodity Trading' })
+    navigation.setOptions({ headerTitle: 'Commodity Trading' })
   }, [])
 
   return (
