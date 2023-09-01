@@ -56,7 +56,7 @@ const TabsLayout = () => {
         <Tab.Navigator name='Tabs Parent'>
             <Tab.Screen name="Tab1" component={AddWithdraw}
                 options={{
-                    title: 'Add Withdraw', headerShown: false,
+                    title: 'Add Withdraw', headerShown: false, 
                     tabBarIcon: ({ color, size }) => (<Icon name="shipping-fast" type='font-awesome-5' color={color} size={size}
                     />)
                 }} />
