@@ -42,13 +42,13 @@ function Feed({ navigation, route }) {
 function LogIn({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Log In</Text>
+            <Text>Custom Draw & Custom Tabs</Text>
             <Button title="Log In" onPress={() => navigation.navigate('MyDrawer')} />
         </View>
     );
 }
 
-export const Drawer = createDrawerNavigator();
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 

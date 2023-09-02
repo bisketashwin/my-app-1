@@ -4,6 +4,9 @@ import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawe
 import { ImageBackground, StyleSheet, Text, View, Image, Alert } from 'react-native'
 import { Touchable, TouchableHighlight } from 'react-native';
 import { Icon } from '@rneui/base';
+
+//// this module was designed follwing this tutrial https://www.youtube.com/watch?v=l8nY4Alk70Q&t=71s
+
 const CustomDrawer = (props) => {
     return (
         <View style={{ flex: 1 }}>

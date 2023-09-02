@@ -9,6 +9,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Drawer = createDrawerNavigator();
 
+//// this module was designed follwing this tutrial https://www.youtube.com/watch?v=l8nY4Alk70Q&t=71s
 export function MyDrawer() {
     const navigation = useNavigation();
     return (
