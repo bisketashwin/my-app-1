@@ -4,11 +4,15 @@ import { useNavigation } from '@react-navigation/native';
 import { Icon } from '@rneui/base';
 import { IconButtons } from '../Styles';
 import CustomDrawer from './CustomDrawer';
-import { TabsLayout, EmptyScreen } from '../../App';
+
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import TabsLayout from '../CustomTab/TabsLayout';
 
 const Drawer = createDrawerNavigator();
 
+export function EmptyScreen() {
+    return <View />;
+}
 //// this module was designed follwing this tutrial https://www.youtube.com/watch?v=l8nY4Alk70Q&t=71s
 export function MyDrawer() {
     const navigation = useNavigation();

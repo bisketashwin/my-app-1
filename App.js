@@ -19,63 +19,47 @@ import Lending from './components/TabScreens/Lending';
 import PNL from './components/TabScreens/PNL';
 import { MyDrawer } from './components/Draw/MyDrawer';
 import LogIn from './components/LogIn';
+import Feed from './components/Feed';
 
 export function EmptyScreen() {
     return <View />;
 }
 
-function Feed({ navigation, route }) {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>{"route.name " + route.name} </Text>
-            <Text>{"  route.key " + route.key}</Text>
-            <Text> </Text>
-            <Button title="Go to MyDrawer" onPress={() => navigation.navigate('MyDrawer')} />
-            <Text> </Text>
-            <Button
-                title="Go to MyDrawer > Profile"
-                onPress={() => navigation.navigate('MyDrawer', { screen: 'Profile' })}
-            />
-        </View>
-    );
-}
-
-
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
 
-export const TabsLayout = () => {
-    return (
-        <Tab.Navigator name='Tabs Parent'>
-            <Tab.Screen name="Tab1" component={AddWithdraw}
-                options={{
-                    title: 'Add Withdraw', headerShown: false,
-                    tabBarIcon: ({ color, size }) => (<Icon name="shipping-fast" type='font-awesome-5' color={color} size={size}
-                    />)
-                }} />
-            <Tab.Screen name="Tab2" component={Receitps}
-                options={{
-                    title: 'Receipts', headerShown: false,
-                    tabBarIcon: ({ color, size }) => (<Icon name="archive" type='entypo' color={color} size={size} />)
-                }} />
-            <Tab.Screen name="Tab3" component={Trading}
-                options={{
-                    title: 'Trading', headerShown: false,
-                    tabBarIcon: ({ color, size }) => (<Icon name="clipboard-list" type='font-awesome-5' color={color} size={size} />)
-                }} />
-            <Tab.Screen name="Tab4" component={Lending}
-                options={{
-                    title: 'Lending', headerShown: false,
-                    tabBarIcon: ({ color, size }) => (<Icon name="hand-coin" type='material-community' color={color} size={size} />)
-                }} />
-            <Tab.Screen name="Tab5" component={PNL}
-                options={{
-                    title: 'PNL', headerShown: false,
-                    tabBarIcon: ({ color, size }) => (<Icon name="chart-line" type='font-awesome-5' color={color} size={size} />)
-                }} />
-        </Tab.Navigator>
-    )
-}
+// export const TabsLayout = () => {
+//     return (
+//         <Tab.Navigator name='Tabs Parent'>
+//             <Tab.Screen name="Tab1" component={AddWithdraw}
+//                 options={{
+//                     title: 'Add Withdraw', headerShown: false,
+//                     tabBarIcon: ({ color, size }) => (<Icon name="shipping-fast" type='font-awesome-5' color={color} size={size}
+//                     />)
+//                 }} />
+//             <Tab.Screen name="Tab2" component={Receitps}
+//                 options={{
+//                     title: 'Receipts', headerShown: false,
+//                     tabBarIcon: ({ color, size }) => (<Icon name="archive" type='entypo' color={color} size={size} />)
+//                 }} />
+//             <Tab.Screen name="Tab3" component={Trading}
+//                 options={{
+//                     title: 'Trading', headerShown: false,
+//                     tabBarIcon: ({ color, size }) => (<Icon name="clipboard-list" type='font-awesome-5' color={color} size={size} />)
+//                 }} />
+//             <Tab.Screen name="Tab4" component={Lending}
+//                 options={{
+//                     title: 'Lending', headerShown: false,
+//                     tabBarIcon: ({ color, size }) => (<Icon name="hand-coin" type='material-community' color={color} size={size} />)
+//                 }} />
+//             <Tab.Screen name="Tab5" component={PNL}
+//                 options={{
+//                     title: 'PNL', headerShown: false,
+//                     tabBarIcon: ({ color, size }) => (<Icon name="chart-line" type='font-awesome-5' color={color} size={size} />)
+//                 }} />
+//         </Tab.Navigator>
+//     )
+// }
 
 
 function App() {
