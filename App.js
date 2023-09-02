@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Button, View, Text, TouchableOpacity, Alert } from 'react-native';
-import { NavigationContainer, useNavigation, DrawerActions } from '@react-navigation/native';
+import { Button, View, Text, Alert } from 'react-native';
+import { NavigationContainer, DrawerActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -10,15 +10,16 @@ import { LogBox } from 'react-native';
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreAllLogs();//Ignore all log notifications
 
-import { containers, buttons, IconButtons, Texts } from './components/Styles';
+import { containers, buttons, Texts } from './components/Styles';
 
 import AddWithdraw from './components/TabScreens/AddWithdraw';
 import Receitps from './components/TabScreens/Receitps';
 import Trading from './components/TabScreens/Trading';
 import Lending from './components/TabScreens/Lending';
 import PNL from './components/TabScreens/PNL';
+import { MyDrawer } from './components/Draw/MyDrawer';
 
-function EmptyScreen() {
+export function EmptyScreen() {
     return <View />;
 }
 
@@ -47,16 +48,16 @@ function LogIn({ navigation }) {
     );
 }
 
-const Drawer = createDrawerNavigator();
+export const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const TabsLayout = () => {
+export const TabsLayout = () => {
     return (
         <Tab.Navigator name='Tabs Parent'>
             <Tab.Screen name="Tab1" component={AddWithdraw}
                 options={{
-                    title: 'Add Withdraw', headerShown: false, 
+                    title: 'Add Withdraw', headerShown: false,
                     tabBarIcon: ({ color, size }) => (<Icon name="shipping-fast" type='font-awesome-5' color={color} size={size}
                     />)
                 }} />
@@ -84,33 +85,6 @@ const TabsLayout = () => {
     )
 }
 
-
-function MyDrawer() {
-    const navigation = useNavigation();
-    return (
-        <Drawer.Navigator options={{ headerShown: false }}>
-            <Drawer.Screen name="Home" component={TabsLayout}/>
-            <Drawer.Screen name="Profile" component={EmptyScreen}
-                options={{
-                    headerLeft: () => (
-                        <TouchableOpacity style={IconButtons.S1}
-                            onPress={() => navigation.navigate('MyDrawer', { screen: 'Home' })}>
-                            <Icon name='arrow-back' type='Ionicons' color='#00' />
-                        </TouchableOpacity>)
-                }} />
-            <Drawer.Screen name="Settings" component={EmptyScreen}
-                options={{
-                    headerLeft: () => (
-                        <TouchableOpacity style={IconButtons.S1}
-                            onPress={() => navigation.navigate('MyDrawer', { screen: 'Home' })}>
-                            <Icon name='arrow-back' type='Ionicons' color='#00' />
-                        </TouchableOpacity>)
-                }} />
-
-            <Drawer.Screen name="Log Out" component={({ navigation }) => navigation.getParent().goBack()} />
-        </Drawer.Navigator>
-    );
-}
 
 function App() {
     return (
