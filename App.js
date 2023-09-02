@@ -18,6 +18,7 @@ import Trading from './components/TabScreens/Trading';
 import Lending from './components/TabScreens/Lending';
 import PNL from './components/TabScreens/PNL';
 import { MyDrawer } from './components/Draw/MyDrawer';
+import LogIn from './components/LogIn';
 
 export function EmptyScreen() {
     return <View />;
@@ -35,15 +36,6 @@ function Feed({ navigation, route }) {
                 title="Go to MyDrawer > Profile"
                 onPress={() => navigation.navigate('MyDrawer', { screen: 'Profile' })}
             />
-        </View>
-    );
-}
-
-function LogIn({ navigation }) {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Custom Draw & Custom Tabs</Text>
-            <Button title="Log In" onPress={() => navigation.navigate('MyDrawer')} />
         </View>
     );
 }
