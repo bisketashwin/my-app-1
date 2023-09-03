@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity,View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Icon } from '@rneui/base';
 import { IconButtons } from '../Styles';
