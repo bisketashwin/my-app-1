@@ -4,7 +4,7 @@ import React from 'react'
 const LogIn = ({ navigation }) => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Custom Draw & Custom Tabs</Text>
+            <Text>Custom Draw & Custom Tabs V1.1</Text>
             <Button title="Log In" onPress={() => navigation.navigate('MyDrawer')} />
         </View>
     );
