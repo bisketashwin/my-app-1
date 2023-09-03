@@ -15,6 +15,7 @@ const TabsLayout = () => {
             // tabBarOptions is depricate so use screenOptions and tabBarShowLabel istead if just showLabel & tabBarStyle insted of just style
             screenOptions={{
                 tabBarShowLabel: false,
+                tabBarHideOnKeyboard:true,
                 tabBarStyle: {
                     ...styles.TabBarStyle,
                     ...styles.shadow,
@@ -80,7 +81,7 @@ export default TabsLayout
 const styles = StyleSheet.create({
     TabBarStyle: {
         position: 'absolute',
-        bottom: 15,
+        marginBottom:10, // TODO: this is causing an issue as it still shows bit of tabs bar beind the key board , looks weared need to fix it or remove this bottom margine
         marginHorizontal:4,
         elevation: 0,
         backgroundColor: '#ffffff',
