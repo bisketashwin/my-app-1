@@ -3,11 +3,8 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from '@rneui/base';
 
-import AddWithdraw from '../TabScreens/AddWithdraw';
-import Receitps from '../TabScreens/Receitps';
-import PNL from '../TabScreens/PNL';
-import Trading from '../TabScreens/Trading';
-import Lending from '../TabScreens/Lending';
+import{ AddWithdraw, Lending, PNL, Receitps, Trading } from '../TabScreens'
+
 
 const Tab = createBottomTabNavigator();
 
