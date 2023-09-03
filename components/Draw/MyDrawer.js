@@ -29,6 +29,7 @@ export function MyDrawer() {
         >
             <Drawer.Screen name="Home" component={TabsLayout}
                 options={{
+                    headerShown: false, // NOTE: this is hiding the headder in tabs view aim is to have a custom header or no header
                     drawerIcon: ({ color }) => (<Icon name='home' size={20} type='font-awesome-5' color={color} />),
                 }} />
             <Drawer.Screen name="Profile" component={EmptyScreen}
