@@ -45,7 +45,20 @@ export const ProfileBtn = ({ navigation }) => {
     )
 }
 
-//export default { SearchUI, ProfileBtn }
+export const  CustomInput=({isFocused, setIsFocused, setValue,label,placeholder})=> {
+    return (<View>
+      <Text>{isFocused ? label: ''}</Text>
+      <TextInput
+        placeholder={isFocused ? '' : placeholder}
+        placeholderTextColor='#000000'
+        //underlineColorAndroid=''TODO: this is creating a bright blue underline wen be is pink and blacik underline when bg is gray 
+        style={{ borderWidth: 1, backgroundColor: isFocused ? '#ffa688' : '#b7b7b7', fontSize: isFocused ? 22 : 12 , paddingHorizontal:10}}
+        onPressIn={(event) => {
+          setIsFocused(true);
+        } }
+        onChangeText={(text) => { setValue(text); } } />
+    </View>)
+  }
 
 
 const styles = StyleSheet.create({})

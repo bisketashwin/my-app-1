@@ -15,8 +15,8 @@ const App = () => {
   
   return (
     <View style={{flex:1, columnGap:20, padding:20}}>
-    <NewFunction {...nameProps}/>
-    <NewFunction {...surnameProps}/>
+    <CustomInput {...nameProps}/>
+    <CustomInput {...surnameProps}/>
     </View>
   );
 };
@@ -26,7 +26,7 @@ export default App;
 
 
 
-const  NewFunction=({isFocused, setIsFocused, setValue,label,placeholder})=> {
+const  CustomInput=({isFocused, setIsFocused, setValue,label,placeholder})=> {
   return (<View>
     <Text>{isFocused ? label: ''}</Text>
     <TextInput
