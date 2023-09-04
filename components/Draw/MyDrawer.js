@@ -7,6 +7,7 @@ import CustomDrawer from './CustomDrawer';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import TabsLayout from '../CustomTab/TabsLayout';
+import UserInfo from '../UserInfo';
 
 const Drawer = createDrawerNavigator();
 
@@ -32,7 +33,7 @@ export function MyDrawer() {
                     headerShown: false, // NOTE: this is hiding the headder in tabs view aim is to have a custom header or no header
                     drawerIcon: ({ color }) => (<Icon name='home' size={20} type='font-awesome-5' color={color} />),
                 }} />
-            <Drawer.Screen name="Profile" component={EmptyScreen}
+            <Drawer.Screen name="Profile" component={UserInfo}
                 options={{
                     drawerIcon: ({ color }) => (<Icon name='user-alt' size={20} type='font-awesome-5' color={color} />),
                     headerLeft: () => (
