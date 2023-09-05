@@ -13,6 +13,8 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
 import { MyDrawer } from './components/Draw/MyDrawer';
 import LogIn from './components/LogIn';
 import Feed from './components/Feed';
+import MyForm from './components/MyForm';
+
 
 export function EmptyScreen() {
     return <View />;
@@ -25,9 +27,10 @@ function App() {
         <SafeAreaView style={{ flex: 1 }}>
             <NavigationContainer>
                 <Stack.Navigator>
-                    <Stack.Screen name="Log In" component={LogIn} options={{ headerShown: false }} />
+                <Stack.Screen name="User Details" component={MyForm}/>
+                    {/* <Stack.Screen name="Log In" component={LogIn} options={{ headerShown: false }} />
                     <Stack.Screen name="MyDrawer" component={MyDrawer} options={{ headerShown: false }} />
-                    <Stack.Screen name="Feed" component={Feed} />
+                    <Stack.Screen name="Feed" component={Feed} /> */}
                 </Stack.Navigator>
             </NavigationContainer>
         </SafeAreaView>

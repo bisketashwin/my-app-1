@@ -49,4 +49,18 @@ const IconButtons = StyleSheet.create({
 })
 
 
+const Colors = StyleSheet.create({
+    S1: {
+        width: 46,
+        height: 46,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    M2: {
+        fontSize: 22,
+    }
+})
+
+
+
 export { containers, buttons, Texts, IconButtons }
