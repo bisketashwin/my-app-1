@@ -1,3 +1,4 @@
+// import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import * as React from 'react';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -24,7 +25,9 @@ const Stack = createNativeStackNavigator();
 
 function App() {
     return (
+        // <GestureHandlerRootView>
         <SafeAreaView style={{ flex: 1 }}>
+            
             <NavigationContainer>
                 <Stack.Navigator>
                 <Stack.Screen name="User Details" component={MyForm}/>
@@ -33,7 +36,9 @@ function App() {
                     <Stack.Screen name="Feed" component={Feed} /> */}
                 </Stack.Navigator>
             </NavigationContainer>
+            
         </SafeAreaView>
+        // </GestureHandlerRootView> 
     );
 }
 
